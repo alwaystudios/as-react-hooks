@@ -1,6 +1,6 @@
 {
-  "name": "as-react-hooks",
-  "version": "1.0.0",
+  "name": "@alwaystudios/as-react-hooks",
+  "version": "1.0.1",
   "repository": "git@github.com:alwaystudios/as-react-hooks.git",
   "author": "Gary Alway <garyalway@gmail.com>",
   "license": "MIT",
