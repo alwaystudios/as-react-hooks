@@ -156,3 +156,16 @@ Responds to click events outside of a component
   }
 
 ```
+
+## useSteps
+
+Run through a series of sequential steps
+
+```
+  export const MyComponent = () => {
+    const { step, incrementStep, decrementStep } = useSteps(3)
+
+    ...
+  }
+
+```

@@ -9,8 +9,10 @@ import { useEffectAsync } from './useEffectAsync'
 import { useShoppingCart } from './useShoppingCart'
 import { useStringFilter } from './useStringFilter'
 import { useOutsideClick } from './useOutsideClick'
+import { useSteps } from './useSteps'
 
 export {
+  useSteps,
   useOutsideClick,
   useStringFilter,
   useShoppingCart,
