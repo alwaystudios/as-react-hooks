@@ -10,8 +10,12 @@ import { useShoppingCart } from './useShoppingCart'
 import { useStringFilter } from './useStringFilter'
 import { useOutsideClick } from './useOutsideClick'
 import { useSteps } from './useSteps'
+import { useDebug } from './useDebug'
+import { useRenderCount } from './useRenderCount'
 
 export {
+  useRenderCount,
+  useDebug,
   useSteps,
   useOutsideClick,
   useStringFilter,
