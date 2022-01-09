@@ -169,3 +169,132 @@ Run through a series of sequential steps
   }
 
 ```
+
+## useTimeout
+
+Runs a callback after specified timeout. Provides `clear` and `reset` functionality
+
+```
+  export const MyComponent = () => {
+    const [count, setCount] = useState(10)
+    const { clear, reset } = useTimeout(() => setCount(0), 1000)
+
+    return (
+      <div>
+        <div>{count}</div>
+        <button onClick={() => setCount(c => c + 1)}>Increment</button>
+        <button onClick={clear}>Clear timeout</button>
+        <button onClick={reset}>Reset timeout</button>
+      </div>
+    )
+  }
+
+```
+
+## useToggle
+
+Toggle state
+
+```
+  export const MyComponent = () => {
+    const [value, toggle] = useToggle(true)
+
+    ...
+  }
+
+```
+
+## useRenderCount
+
+Determines how many times a component is rendered
+
+```
+  export const MyComponent = () => {
+    const count = useRenderCount()
+
+    ...
+  }
+
+```
+
+## useDebug
+
+Debugger hook outputs to console:
+
+```
+  {
+    changedProps: Object
+    renderCount: number
+    lastRendered: timestamp
+    timeSinceLastRender: timestamp
+  }
+```
+
+```
+  export const MyComponent = (props) => {
+    useDebug('MyComponent', props)
+
+    ...
+  }
+
+```
+
+## useDebounce
+
+Debounce hook runs a callback after a delay but resets that timeout if a dependency changes.
+In this example the alert will not occur if the button is clicked continuously within a 1s time frame.
+
+```
+  export const MyComponent = () => {
+    const [count, setCount] = useState(10)
+    useDebounce(() => alert(count), 1000, [count])
+
+    return (
+      <div>
+        <div>{count}</div>
+        <button onClick={() => setCount(c => c + 1)}>Increment</button>
+      </div>
+    )
+  }
+
+```
+
+## useUpdateEffect
+
+Run a callback when dependencies change (do not run on first render)
+
+```
+  export const MyComponent = () => {
+    const [count, setCount] = useState(10)
+    useUpdateEffect(() => alert(count), [count])
+
+    return (
+      <div>
+        <div>{count}</div>
+        <button onClick={() => setCount(c => c + 1)}>Increment</button>
+      </div>
+    )
+  }
+```
+
+## useArray
+
+Common array manipulation functions
+
+```
+  export const MyComponent = () => {
+    const { array, set, push, remove, filter, update, clear } = useArray([1, 2, 3, 4, 5])
+
+    return (
+      <div>
+        <div>{array.join(', ')}</div>
+        <button onClick={() => set([1, 2])}>Set</button>
+        <button onClick={() => push(7)}>Push</button>
+        <button onClick={() => remove(1)}>Remove</button>
+        <button onClick={() => filter(n => n < 3)}>Filter</button>
+        <button onClick={() => update(1, 9)}>Update</button>
+        <button onClick={() => clear}>Clear</button>
+      </div>
+    )
+  }
+```

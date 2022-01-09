@@ -12,8 +12,18 @@ import { useOutsideClick } from './useOutsideClick'
 import { useSteps } from './useSteps'
 import { useDebug } from './useDebug'
 import { useRenderCount } from './useRenderCount'
+import { useToggle } from './useToggle'
+import { useTimeout } from './useTimeout'
+import { useDebounce } from './useDebounce'
+import { useUpdateEffect } from './useUpdateEffect'
+import { useArray } from './useArray'
 
 export {
+  useArray,
+  useUpdateEffect,
+  useDebounce,
+  useTimeout,
+  useToggle,
   useRenderCount,
   useDebug,
   useSteps,
